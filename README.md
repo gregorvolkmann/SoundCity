@@ -106,32 +106,33 @@ Theoretisch muss beim Spawnen immer auf zweidimensionaler Ebene die Fläche der
 Der Stresspegel ist vergleichbar wie ein Hitpoint­Wert oder noch genauer eine Art Ausdauerleiste, wie lange man sich frei den NPCs und anderen Geräuschen aussetzen kann. Der Stresslevel wird immens erhöht, wenn man das Level verlässt oder mit einem NPC kollidiert. Also sollte man möglich vermeiden die Karte zu verlassen und darauf zu achten allen NPCs auszuweichen. Der Stresspegel wird in Form einer Leiste im HUD angezeigt und vermittelt immer den aktuellen Stand des Stresspegels. Es ist mit dem Playernode verbunden und kann so einfach bei Kollision erhöht werden.
 
 Es funktioniert nach folgendem Algorithmus:
-Die Collision­Klasse läuft mit einer Integer-Variable, die alle Kollisionen zwischen Player und NPC zusammenzählt. Da pro Sekunde mehrere Kollisionabfragen stattfinden und sich somit die Klassenvariable in diesem Fall verhundertfacht, falls eine “Stresskollision” stattfindet, wird die aktuelle Anzahl der Kollision (Bsp. 150) durch 10 zurückgegeben und dies beim SimpleUpdate() des Spiels für >3 überprüft. Ist dies der Fall, wird die Stressbar vergrößert und die Klassenvariable der Kollision wird wieder zurückgesetzt.
+Die Collision-Klasse läuft mit einer Integer-Variable, die alle Kollisionen zwischen Player und NPC zusammenzählt. Da pro Sekunde mehrere Kollisionabfragen stattfinden und sich somit die Klassenvariable in diesem Fall verhundertfacht, falls eine “Stresskollision” stattfindet, wird die aktuelle Anzahl der Kollision (Bsp. 150) durch 10 zurückgegeben und dies beim SimpleUpdate() des Spiels für >3 überprüft. Ist dies der Fall, wird die Stressbar vergrößert und die Klassenvariable der Kollision wird wieder zurückgesetzt.
 
 ## JmonkeyEngine3
 
 ![Image of JME3RC2](https://github.com/gregorvolkmann/SoundCity/blob/master/doc/jME3RC2.png)
 
- jMonkeyEngine (auch Java Monkey Engine oder jME) ist eine Szenengraph­basierte und komplett in Java geschriebene Grafik­API. Viele der Ideen, die in jME verwirklicht wurden
+jMonkeyEngine (auch Java Monkey Engine oder jME) ist eine Szenengraph-basierte und komplett in Java geschriebene Grafik-API. Viele der Ideen, die in jME verwirklicht wurden
 stammen aus dem Buch "3D Game Engine Design" von David Eberly.2
 Die Engine bietet uns eine umfangreiche Library von Methoden für den Einsatz von Spiele. Dank der Online­Doku ist es einfach etwas zu finden und sich mit der Engine vertraut zu machen, perfekt für unser Spiel.
 
 ## Weitere Ideen
 SoundCity ist eine Umsetzung unserer Initialideen und kann natürlich wunderbar erweitert und noch weiter ausgefeilt und optimiert werden. So könnten in Zukunft auch noch Laufanimationen für NPCs und das Playermodel eingefügt werden.
+
 Ein Startmenü, bevor das Spiel überhaupt beginnt, wo man entsprechende Einstellungen vornehmen kann und sogar einen eigenen Song oder eine ganze Playlist von Songs vordefiniert laden könnte. Auch wären noch mehrere Level oder eine größere Welt mit noch mehr Hindernissen und lustigen Elementen wie z.B. einen Laufgeschwindigkeitsbeschleuniger oder gar Objekte die einem die Steuerung verdrehen und dann behindern. Kreativität lässt seinen freien Lauf und SoundCity bietet noch viele Möglichkeiten.
 
 ## Programme und Werkzeuge
-blender - 3D Modellierung
-JmonkeyEngine3 - Java Programmierung
-freac - Kodierung von Audiodateien
-asana - Planung von Aufgaben
-Illustrator - Grafiken zur Visualisierung
-Photoshop - Logo und Icons
+* blender - 3D Modellierung
+* JmonkeyEngine3 - Java Programmierung
+* freac - Kodierung von Audiodateien
+* asana - Planung von Aufgaben
+* Illustrator - Grafiken zur Visualisierung
+* Photoshop - Logo und Icons
 
 ## Externes Material
-Musik von SoundCloud
-Soundeffekte von freien Quellen im Internet
+* Musik von SoundCloud
+* Soundeffekte von freien Quellen im Internet
 
 ## Quellen
-http://de.wikipedia.org/wiki/Lightweight_Java_Game_Library http://www.lwjgl.org
-http://jmonkeyengine.org/wiki/doku.php/
+* http://de.wikipedia.org/wiki/Lightweight_Java_Game_Library http://www.lwjgl.org
+* http://jmonkeyengine.org/wiki/doku.php/
