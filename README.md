@@ -4,6 +4,7 @@ A project I worked on with Denis Seyfried and Onur Karaman for the lecture *Deve
 Runs on jMonkeyEngine 3.0
 
 # Documentation (German)
+![Image of SoundCity concept](https://github.com/gregorvolkmann/SoundCity/blob/master/doc/SoundCity-01.png)
 
 ## Grundidee
 Die Grundidee von SoundCity ist eine 2D Simulation mit Schwerpunkt auf Audio. Der Spielstil und die Steuerung soll aus Vogelperspektive in etwa wie GTA oder GTAII ablaufen. Der Spieler sieht sich selbst im Mittelpunkt der Karte und kann sich frei auf einer von uns erstellen Karte bewegen. Bei der Klangsimulation geht es um räumliche und natürliche Nachahmung einer virtuellen Umgebung. Beispiele hierfür sind Geräusche durch Personen (NPCs), Tieren oder Straßenlärm. Es soll ein dreidimensionales Klangbild entstehen, welches wir mit Hilfe des Dopplereffekts nachbilden.
@@ -30,6 +31,9 @@ Die Aufgaben zur Entwicklung wurden wie folgt unterteilt:
 Um das Spiel in einer Testebene auszuführen, muss jMonkeyEngine3 installiert werden. Das Spiel kann in einer maximalen Auflösung von 1152x864 ausgeführt werden.
 
 ## 3D-Modellierung
+
+![Image of 3D Model in Blender](https://github.com/gregorvolkmann/SoundCity/blob/master/doc/SoundCity3D.png)
+
 Blender ist eine freie (mit der GPL lizenzierte) 3D-Grafiksoftware. Sie enthält Funktionen, um dreidimensionale Körper zu modellieren, sie zu texturieren, zu animieren und zu rendern.1 Die Karte, die NPC-Models, das Playermodel und das Model der Musiknote haben wir mit blender modelliert, da die jMonkeyEngine sehr gut und flexibel mit Dateiformat *.blend arbeiten kann.
 
 ## Steuerung und Kameraführung
@@ -71,10 +75,15 @@ Jede Taste kann belegt werden, muss aber in setupKeys vordefiniert werden, sodas
     }
 
 ## Kollision mit Objekten
+
+![Image of collision in engine](https://github.com/gregorvolkmann/SoundCity/blob/master/doc/SoundCity%20Collision.png)
+
 Die Kollision von Objekten wird über unseren ColManager verwaltet. Es wird geprüft ob der Player mit Objekten (dem Level), NPCs oder Musiknoten in Berührung kommt. Dabei wird Grundauf wird mit den Nodes gearbeitet, sodass eine physikalische Kollision überhaupt festgestellt werden kann. Essentiell wichtig ist natürlich das Einsammeln der Noten, welches einfach durch die Schnittmenge von Objekten ermittelt werden kann. So verursachen die NPCs bei Berührung “Schaden”, welches den Stresspegel erhöht.
 
 ## SoundFactory
 Die SoundFactory generiert SoundFragmente. Jedes Fragment setzt sich aus einem Model und einem physikalischen Körper zusammen. Das Model ist das für den Benutzer sichtbare Fragment und der Körper die dazugehörigen physikalischen Eigenschaften. Die Factory verwaltet zudem die Spawnpunkte der einzelnen Fragmente, sodass die Fragmente nicht ineinander gespawned werden.
+
+![Image of SoundFactory domain model](https://github.com/gregorvolkmann/SoundCity/blob/master/doc/SongFactory.png)
 
 ## Audio
 JmonkeyEngine3 bietet OpenAL und unterstützt .ogg und .wav Audiodateien. Es sind alle nötigen Methoden gegeben um AudioNodes in die Welt zu platzieren und somit auch einen 3D-Raumklang zu erzeugen. Für unsere Zwecke brauchen wir Backgroundmusik und Objekte die Geräusche von sich geben. Etwa beim Kollidieren mit NPCs oder beim Einsammeln von Musiknoten.
@@ -100,6 +109,9 @@ Es funktioniert nach folgendem Algorithmus:
 Die Collision­Klasse läuft mit einer Integer-Variable, die alle Kollisionen zwischen Player und NPC zusammenzählt. Da pro Sekunde mehrere Kollisionabfragen stattfinden und sich somit die Klassenvariable in diesem Fall verhundertfacht, falls eine “Stresskollision” stattfindet, wird die aktuelle Anzahl der Kollision (Bsp. 150) durch 10 zurückgegeben und dies beim SimpleUpdate() des Spiels für >3 überprüft. Ist dies der Fall, wird die Stressbar vergrößert und die Klassenvariable der Kollision wird wieder zurückgesetzt.
 
 ## JmonkeyEngine3
+
+![Image of JME3RC2](https://github.com/gregorvolkmann/SoundCity/blob/master/doc/jME3RC2.png)
+
  jMonkeyEngine (auch Java Monkey Engine oder jME) ist eine Szenengraph­basierte und komplett in Java geschriebene Grafik­API. Viele der Ideen, die in jME verwirklicht wurden
 stammen aus dem Buch "3D Game Engine Design" von David Eberly.2
 Die Engine bietet uns eine umfangreiche Library von Methoden für den Einsatz von Spiele. Dank der Online­Doku ist es einfach etwas zu finden und sich mit der Engine vertraut zu machen, perfekt für unser Spiel.
