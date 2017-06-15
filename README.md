@@ -1,5 +1,5 @@
 # SoundCity
-A project I worked on with Denis Seyfried and Onur Karaman for the lecture *Development of Interactive User Interfaces* at Hochschule RheinMain.
+A project I worked on in 2013 with Denis Seyfried (@dantempla) and Onur Karaman for the lecture *Development of Interactive User Interfaces* at Hochschule RheinMain.
 
 Runs on jMonkeyEngine 3.0
 
