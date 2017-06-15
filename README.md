@@ -31,3 +31,41 @@ Um das Spiel in einer Testebene auszuführen, muss jMonkeyEngine3 installiert w
 
 ## 3D-Modellierung
 Blender ist eine freie (mit der GPL lizenzierte) 3D-Grafiksoftware. Sie enthält Funktionen, um dreidimensionale Körper zu modellieren, sie zu texturieren, zu animieren und zu rendern.1 Die Karte, die NPC-Models, das Playermodel und das Model der Musiknote haben wir mit blender modelliert, da die jMonkeyEngine sehr gut und flexibel mit Dateiformat *.blend arbeiten kann.
+
+## Steuerung und Kameraführung
+Die Kameraführung ist fest auf den Player gerichtet und folgt ihm aus der Vogelperspektive. So ist der Player immer im Mittelpunkt der Kamera. Sämtliche Kameraeinstellungen werden bereits von der Library geliefert und müssen nur noch entsprechend angepasst werden, sodass sie unseren Wünschen für unser Spiel entspricht.
+
+Die Kamera lässt sich während des Spielens mit gedrückter linker Maustaste verstellen um die Ansicht zu verändern.
+
+W - Geradeaus bewegen
+A - Linksdrehung
+D - Rechtsdrehung
+S - Rückwärts bewegen
+
+**Sondertasten:**
+M - Ton muten
+L - Debugmode
+
+Via dem inputManager kann man einfach alle Tasten festlegen, welche verwendet werden.
+
+    private void setupKeys() {
+        inputManager.addMapping("Left", new KeyTrigger(KeyInput.KEY_A)); inputManager.addMapping("Right", new KeyTrigger(KeyInput.KEY_D));      
+        inputManager.addMapping("Up", new KeyTrigger(KeyInput.KEY_W)); inputManager.addMapping("Down", new KeyTrigger(KeyInput.KEY_S)); 
+        inputManager.addMapping("Space", new KeyTrigger(KeyInput.KEY_SPACE)); ...
+        inputManager.addListener(this,"Left");
+        inputManager.addListener(this,"Right");
+        inputManager.addListener(this,"Up");
+        inputManager.addListener(this,"Down");
+        inputManager.addListener(this,"Space");
+        ...
+    }
+
+Jede Taste kann belegt werden, muss aber in setupKeys vordefiniert werden, sodass man einen Tastenanschlag überhaupt abfangen kann. Über einen onActionListener werden dann die Tastenanschläge gefangen und eine entsprechende Methode ausgeführt.
+
+    public void onAction(String key, boolean pressed, float tpf) {
+        if (key.equals("Left")) { left = pressed; }
+        else if (key.equals("Right")) { right = pressed; }
+        else if (key.equals("Up")) { up = pressed; }
+        else if (key.equals("Down")) { down = pressed; }
+        ...
+    }
