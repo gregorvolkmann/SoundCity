@@ -1,7 +1,12 @@
 # SoundCity
-A project I worked on in 2013 with Denis Seyfried (@dantempla) and Onur Karaman for the lecture *Development of Interactive User Interfaces* at Hochschule RheinMain.
+A project worked on in 2013 for the lecture *Development of Interactive User Interfaces* (3rd semester) at Hochschule RheinMain.
 
 Runs on jMonkeyEngine 3.0
+
+## Contributors
+  * Onur Karaman
+  * Denis Seyfried (@dantempla)
+  * Gregor Volkmann (@gregorvolkmann)
 
 # Documentation (German)
 ![Image of SoundCity concept](https://github.com/gregorvolkmann/SoundCity/blob/master/doc/SoundCity-01.png)
